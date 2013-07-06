@@ -1,10 +1,11 @@
 {
       "manifest_version": 2,
-
-        "name": "Merge pages",
-          "description": "No more pagination! It merges content from several pages to a single one.",
-            "version": "1.0",
-
+      "name": "Merge pages",
+      "description": "No more pagination! It merges content from several pages to a single one.",
+      "version": "1.0",
+      "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+                     "128": "icon128.png" },
               "permissions": [
                   "https://secure.flickr.com/"
                     ],
