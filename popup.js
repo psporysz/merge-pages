@@ -1,4 +1,16 @@
 $(function(){
+    // bind to status change events
+     chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+          if (request.method === "merge_page_status") {
+            $('.progress-bar .' + request.status).show();
+          }
+          sendResponse({});
+    });
+
+    // prepare content
+    $('.progress-bar li').hide();
+    $('.progress-bar .looking').show();
+
     // gets tab's content and process
     chrome.tabs.getCurrent(function(tab) {
            // load jquery
