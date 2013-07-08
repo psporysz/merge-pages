@@ -1,7 +1,7 @@
 {
       "manifest_version": 2,
       "name": "Merge pages",
-      "description": "No more pagination! It merges content from several pages to a single one.",
+      "description": "No more pagination! It merges content from several pages into a single one.",
       "version": "0.1",
       "icons": { "16": "icon16.png",
                  "48": "icon48.png",
