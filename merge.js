@@ -5,8 +5,12 @@ $(function(){
     // get content from all pages
     paginatorEl.find('a').each(function(){
         var url = $(this).attr('href');
-        $.ajax(url).done(function(data){
-            $('body').append(data);
+        var iframe = $('<iframe src="' + url + '" />');
+        iframe.appendTo('body');
+        iframe.load(function() {
+            var height = iframe.contents().height() + 'px';
+            console.log('height: ' + height);
+            iframe.css({'border': 'none', 'width': '100%', 'height': height});
         });
     });
 });
