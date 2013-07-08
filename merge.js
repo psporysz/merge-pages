@@ -1,6 +1,16 @@
+var PAGE_LINKS_RE = /^\s*2\s*$/
+
 $(function(){
     // page links detection
-    var paginatorEl = $('a:contains(1) + a:contains(2)').parent();
+    // if have luck there are at least three pages
+    // next to each other...
+    var paginatorEl = $('a:contains(2) + a:contains(3)').parent();
+    if(paginatorEl.length == 0) {
+        // mayby we have some luck here...
+        paginatorEl = $('a').filter(function() {
+           return PAGE_LINKS_RE.test($(this).text());
+        }).parent();
+    }
 
     // get content from all pages
     paginatorEl.find('a').each(function(){
